@@ -60,7 +60,7 @@ g2int g2_unpack6(unsigned char *cgrib,g2int *iofst,g2int ngpts,g2int *ibmap,
 
       if ( isecnum != 6 ) {
          ierr=2;
-         fprintf(stderr,"g2_unpack6: Not Section 6 data.\n");
+         // fprintf(stderr,"g2_unpack6: Not Section 6 data.\n");
          return(ierr);
       }
 

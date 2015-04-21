@@ -121,7 +121,7 @@ g2int g2_unpack7(unsigned char *cgrib,g2int *iofst,g2int igdsnum,g2int *igdstmpl
         if ( igdsnum>=50 && igdsnum <=53 ) 
           specunpack(cgrib+ipos,idrstmpl,ndpts,igdstmpl[0],igdstmpl[2],igdstmpl[2],lfld);
         else {
-          fprintf(stderr,"g2_unpack7: Cannot use GDT 3.%d to unpack Data Section 5.51.\n",(int)igdsnum);
+          // fprintf(stderr,"g2_unpack7: Cannot use GDT 3.%d to unpack Data Section 5.51.\n",(int)igdsnum);
           ierr=5;
           if ( lfld != 0 ) free(lfld);
           *fld=0;     //NULL
@@ -138,7 +138,7 @@ g2int g2_unpack7(unsigned char *cgrib,g2int *iofst,g2int igdsnum,g2int *igdstmpl
         }
 #endif  /* USE_PNG */
       else {
-        fprintf(stderr,"g2_unpack7: Data Representation Template 5.%d not yet implemented.\n",(int)idrsnum);
+        // fprintf(stderr,"g2_unpack7: Data Representation Template 5.%d not yet implemented.\n",(int)idrsnum);
         ierr=4;
         if ( lfld != 0 ) free(lfld);
         *fld=0;     //NULL

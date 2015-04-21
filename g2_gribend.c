@@ -60,7 +60,7 @@ g2int g2_gribend(unsigned char *cgrib)
 //  Check to see if beginning of GRIB message exists
 //
       if ( cgrib[0]!=G || cgrib[1]!=R || cgrib[2]!=I || cgrib[3]!=B ) {
-        printf("g2_gribend: GRIB not found in given message.\n");
+        // printf("g2_gribend: GRIB not found in given message.\n");
         ierr=-1;
         return (ierr);
       }
@@ -85,9 +85,9 @@ g2int g2_gribend(unsigned char *cgrib)
       //    If byte count for each section doesn't match current
       //    total length, then there is a problem.
         if ( len > lencurr ) {
-          printf("g2_gribend: Section byte counts don''t add to total.\n");
-          printf("g2_gribend: Sum of section byte counts = %d\n",(int)len);
-          printf("g2_gribend: Total byte count in Section 0 = %d\n",(int)lencurr);
+          // printf("g2_gribend: Section byte counts don''t add to total.\n");
+          // printf("g2_gribend: Sum of section byte counts = %d\n",(int)len);
+          // printf("g2_gribend: Total byte count in Section 0 = %d\n",(int)lencurr);
           ierr=-3;
           return (ierr);
         }
@@ -96,8 +96,8 @@ g2int g2_gribend(unsigned char *cgrib)
 //  Can only add End Section (Section 8) after Section 7.
 //
       if ( isecnum != 7 ) {
-        printf("g2_gribend: Section 8 can only be added after Section 7.\n");
-        printf("g2_gribend: Section %ld was the last found in given GRIB message.\n",isecnum);
+        // printf("g2_gribend: Section 8 can only be added after Section 7.\n");
+        // printf("g2_gribend: Section %ld was the last found in given GRIB message.\n",isecnum);
         ierr=-4;
         return (ierr);
       }

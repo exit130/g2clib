@@ -72,7 +72,7 @@
 //       
     image=jpc_decode(jpcstream,opts);
     if ( image == 0 ) {
-       printf(" jpc_decode return\n");
+       // printf(" jpc_decode return\n");
        return -3;
     }
     
@@ -111,7 +111,7 @@
 //   No color components.
 //
     if (image->numcmpts_ != 1 ) {
-       printf("dec_jpeg2000: Found color image.  Grayscale expected.\n");
+       // printf("dec_jpeg2000: Found color image.  Grayscale expected.\n");
        return (-5);
     }
 

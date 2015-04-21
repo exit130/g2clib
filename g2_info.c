@@ -91,7 +91,7 @@ g2int g2_info(unsigned char *cgrib,g2int *listsec0,g2int *listsec1,
         }
       }
       if (istart == -1) {
-        printf("g2_info:  Beginning characters GRIB not found.");
+        // printf("g2_info:  Beginning characters GRIB not found.");
         ierr=1;
         return(ierr);
       }
@@ -113,7 +113,7 @@ g2int g2_info(unsigned char *cgrib,g2int *listsec0,g2int *listsec1,
 //  Currently handles only GRIB Edition 2.
 //  
       if (listsec0[1] != 2) {
-        printf("g2_info: can only decode GRIB edition 2.");
+        // printf("g2_info: can only decode GRIB edition 2.");
         ierr=2;
         return(ierr);
       }
@@ -125,7 +125,7 @@ g2int g2_info(unsigned char *cgrib,g2int *listsec0,g2int *listsec1,
       gbit(cgrib,&isecnum,iofst,8);         // Section number ( 1 )
       iofst=iofst+8;
       if (isecnum != 1) {
-        printf("g2_info: Could not find section 1.");
+        // printf("g2_info: Could not find section 1.");
         ierr=3;
         return(ierr);
       }
@@ -150,7 +150,7 @@ g2int g2_info(unsigned char *cgrib,g2int *listsec0,g2int *listsec1,
             cgrib[ipos+3]=='7') {
           ipos=ipos+4;
           if (ipos != (istart+lengrib)) {
-            printf("g2_info: '7777' found, but not where expected.\n");
+            // printf("g2_info: '7777' found, but not where expected.\n");
             ierr=4;
             return(ierr);
           }
@@ -164,7 +164,7 @@ g2int g2_info(unsigned char *cgrib,g2int *listsec0,g2int *listsec1,
         iofst=iofst+8;
         ipos=ipos+lensec;                 // Update beginning of section pointer
         if (ipos > (istart+lengrib)) {
-          printf("g2_info: '7777'  not found at end of GRIB message.\n");
+          // printf("g2_info: '7777'  not found at end of GRIB message.\n");
           ierr=5;
           return(ierr);
         }
@@ -178,7 +178,7 @@ g2int g2_info(unsigned char *cgrib,g2int *listsec0,g2int *listsec1,
               (*numfields)++;
         }
         else {
-           printf("g2_info: Invalid section number found in GRIB message: %ld\n"                   ,isecnum);
+           // printf("g2_info: Invalid section number found in GRIB message: %ld\n"                   ,isecnum);
            ierr=6;
            return(ierr);
         }

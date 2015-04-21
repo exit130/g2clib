@@ -76,7 +76,7 @@ g2int g2_create(unsigned char *cgrib,g2int *listsec0,g2int *listsec1)
 //  Currently handles only GRIB Edition 2.
 //  
       if (listsec0[1] != 2) {
-        printf("g2_create: can only code GRIB edition 2.");
+        // printf("g2_create: can only code GRIB edition 2.");
         ierr=-1;
         return (ierr);
       }

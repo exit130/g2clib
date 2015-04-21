@@ -59,7 +59,7 @@ g2int g2_unpack2(unsigned char *cgrib,g2int *iofst,g2int *lencsec2,unsigned char
       if ( isecnum != 2 ) {
          ierr=2;
          *lencsec2=0;
-         fprintf(stderr,"g2_unpack2: Not Section 2 data.\n");
+         // fprintf(stderr,"g2_unpack2: Not Section 2 data.\n");
          return(ierr);
       }
 

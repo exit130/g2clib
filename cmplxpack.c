@@ -68,7 +68,7 @@ void cmplxpack(g2float *fld,g2int ndpts, g2int idrsnum,g2int *idrstmpl,
          misspack(fld,ndpts,idrsnum,idrstmpl,cpack,lcpack);
       }
       else {
-         printf("cmplxpack: Don:t recognize Missing value option.");
+         // printf("cmplxpack: Don:t recognize Missing value option.");
          *lcpack=-1;
       }
 

@@ -141,7 +141,7 @@ void pngpack(g2float *fld,g2int width,g2int height,g2int *idrstmpl,
         //
         *lcpack=(g2int)enc_png((char *)ctemp,width,height,nbits,(char *)cpack);
         if (*lcpack <= 0) {
-           printf("pngpack: ERROR Packing PNG = %d\n",(int)*lcpack);
+           // printf("pngpack: ERROR Packing PNG = %d\n",(int)*lcpack);
         }
         free(ctemp);
 

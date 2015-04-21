@@ -85,7 +85,7 @@ void misspack(g2float *fld,g2int ndpts,g2int idrsnum,g2int *idrstmpl,
       dscale=int_power(10.0,idrstmpl[2]);
       missopt=idrstmpl[6];
       if ( missopt != 1 && missopt != 2 ) {
-         printf("misspack: Unrecognized option.\n");
+         // printf("misspack: Unrecognized option.\n");
          *lcpack=-1;
          return;
       }

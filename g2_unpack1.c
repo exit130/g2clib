@@ -74,7 +74,7 @@ g2int g2_unpack1(unsigned char *cgrib,g2int *iofst,g2int **ids,g2int *idslen)
       if ( isecnum != 1 ) {
          ierr=2;
          *idslen=13;
-         fprintf(stderr,"g2_unpack1: Not Section 1 data.\n");
+         // fprintf(stderr,"g2_unpack1: Not Section 1 data.\n");
          return(ierr);
       }
 

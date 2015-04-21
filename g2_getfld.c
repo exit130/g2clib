@@ -279,7 +279,7 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
 //  Check for valid request number
 //  
       if (ifldnum <= 0) {
-        printf("g2_getfld: Request for field number must be positive.\n");
+        // printf("g2_getfld: Request for field number must be positive.\n");
         ierr=3;
         return(ierr);
       }
@@ -295,7 +295,7 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
         }
       }
       if (istart == -1) {
-        printf("g2_getfld:  Beginning characters GRIB not found.\n");
+        // printf("g2_getfld:  Beginning characters GRIB not found.\n");
         ierr=1;
         return(ierr);
       }
@@ -316,7 +316,7 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
 //  Currently handles only GRIB Edition 2.
 //  
       if (ver != 2) {
-        printf("g2_getfld: can only decode GRIB edition 2.\n");
+        // printf("g2_getfld: can only decode GRIB edition 2.\n");
         ierr=2;
         return(ierr);
       }
@@ -332,7 +332,7 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
           ipos=ipos+4;
           //    If end of GRIB message not where expected, issue error
           if (ipos != (istart+lengrib)) {
-            printf("g2_getfld: '7777' found, but not where expected.\n");
+            // printf("g2_getfld: '7777' found, but not where expected.\n");
             ierr=4;
             return(ierr);
           }
@@ -350,7 +350,7 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
         //  Check to see if section number is valid
         //
         if ( isecnum<1 || isecnum>7 ) {
-          printf("g2_getfld: Unrecognized Section Encountered=%ld\n",isecnum);
+          // printf("g2_getfld: Unrecognized Section Encountered=%ld\n",isecnum);
           ierr=8;
           return(ierr);
         }
@@ -459,7 +459,7 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
                  if( bmpsave!=0 ) 
                     lgfld->bmap=bmpsave;
                  else {
-                    printf("g2_getfld: Prev bit-map specified, but none exist.\n");
+                    // printf("g2_getfld: Prev bit-map specified, but none exist.\n");
                     ierr=17;
                     return(ierr);
                  }
@@ -509,7 +509,7 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
             }
           }
           else {
-            printf("g2_getfld: return from g2_unpack7 = %d \n",(int)jerr);
+            // printf("g2_getfld: return from g2_unpack7 = %d \n",(int)jerr);
             ierr=14;
             return(ierr);
           }
@@ -520,7 +520,7 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
         //
         ipos=ipos+lensec;                // Update beginning of section pointer
         if (ipos > (istart+lengrib)) {
-          printf("g2_getfld: '7777'  not found at end of GRIB message.\n");
+          // printf("g2_getfld: '7777'  not found at end of GRIB message.\n");
           ierr=7;
           return(ierr);
         }
@@ -543,8 +543,8 @@ g2int g2_getfld(unsigned char *cgrib,g2int ifldnum,g2int unpack,g2int expand,
 //  If exited from above loop, the end of the GRIB message was reached
 //  before the requested field was found.
 //
-      printf("g2_getfld: GRIB message contained %ld different fields.\n",numfld);
-      printf("g2_getfld: The request was for field %ld.\n",ifldnum);
+      // printf("g2_getfld: GRIB message contained %ld different fields.\n",numfld);
+      // printf("g2_getfld: The request was for field %ld.\n",ifldnum);
       ierr=6;
 
       return(ierr);

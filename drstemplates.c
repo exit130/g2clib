@@ -94,7 +94,7 @@ gtemplate *getdrstemplate(g2int number)
               return(new);
            }
            else {
-             printf("getdrstemplate: DRS Template 5.%d not defined.\n",(int)number);
+             // printf("getdrstemplate: DRS Template 5.%d not defined.\n",(int)number);
              return(0);        //NULL
            }
 

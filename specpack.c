@@ -93,8 +93,8 @@ void specpack(g2float *fld,g2int ndpts,g2int JJ,g2int KK,g2int MM,
       free(pscale);
 
       if (incu != Ts) {
-         printf("specpack: Incorrect number of unpacked values %d given:\n",(int)Ts);
-         printf("specpack: Resetting idrstmpl[8] to %d\n",(int)incu);
+         // printf("specpack: Incorrect number of unpacked values %d given:\n",(int)Ts);
+         // printf("specpack: Resetting idrstmpl[8] to %d\n",(int)incu);
          Ts=incu;
       }
 //

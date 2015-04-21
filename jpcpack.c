@@ -147,12 +147,14 @@ void jpcpack(g2float *fld,g2int width,g2int height,g2int *idrstmpl,
         sbits(ctemp,ifld,0,nbytes*8,0,ndpts);
         *lcpack=(g2int)enc_jpeg2000(ctemp,width,height,nbits,idrstmpl[5],idrstmpl[6],retry,(char *)cpack,nsize);
         if (*lcpack <= 0) {
-           printf("jpcpack: ERROR Packing JPC = %d\n",(int)*lcpack);
+           // printf("jpcpack: ERROR Packing JPC = %d\n",(int)*lcpack);
            if ( *lcpack == -3 ) {
               retry=1;
               *lcpack=(g2int)enc_jpeg2000(ctemp,width,height,nbits,idrstmpl[5],idrstmpl[6],retry,(char *)cpack,nsize);
+	      /*
               if ( *lcpack <= 0 ) printf("jpcpack: Retry Failed.\n");
               else printf("jpcpack: Retry Successful.\n");
+	      */
            }
         }
         free(ctemp);
